@@ -47,7 +47,7 @@ class ShirtsController < ApplicationController
 	private
 
 	def shirt_params
-		params.require(:shirt).permit(:name, :price)
+		params.require(:shirt).permit(:name, :price, :image)
 	end
 
 	def find_shirt
