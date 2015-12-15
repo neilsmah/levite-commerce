@@ -6,11 +6,13 @@ class ShirtsController < ApplicationController
 	end 
 
 	def new
-		@shirt = Shirt.new
+		@shirt = current_user.shirts.build
 	end
 
 	def create
-		@shirt = Shirt.new(shirt_params)
+
+
+		@shirt = current_user.shirts.build(shirt_params)
 
 		if @shirt.save
 			redirect_to @shirt, notice: "Succesfully created"
